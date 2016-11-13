@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>OpenPixelControlSharp.Core.Client</id>
+    <version>0.0.1.1</version>
+    <title>Open Pixel Control Client</title>
+    <authors>Erin O&apos;Connell</authors>
+    <owners>Erin O&apos;Connell</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is an implamentation of an Open PIxel Control Client</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2016 Erin O&apos;Connell</copyright>
+    <tags>opc led open pixel control</tags>
+  </metadata>
+  <files>
+    <file src="bin\Debug\netstandard1.6\OpenPixelControl.Sharp.dll" target="lib\netstandard1.6" />
+  </files>
+</package>
