@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 
-namespace OpenPixelControl.Sharp
+namespace OpenPixelControl
 {
-    public class RgbTupleList<T1, T2, T3> : List<Tuple<T1, T2, T3>>
-    {
-        public void Add(T1 item, T2 item2, T3 item3)
-        {
-            Add(new Tuple<T1, T2, T3>(item, item2, item3));
-        }
-    }
 
     public class Client : IDisposable
     {
@@ -54,7 +47,7 @@ namespace OpenPixelControl.Sharp
                 try
                 {
                     debug("Ensure Connected: trying to connect...");
-                    _socket.Ttl = 10;
+                    _socket.Ttl = 1;
                     IPAddress ip = IPAddress.Parse(_ip);
                     _socket.Connect(ip, _port);
                     debug("Ensure Connected: ....success");
@@ -78,7 +71,7 @@ namespace OpenPixelControl.Sharp
             }
         }
 
-        public bool canConnect()
+        private bool canConnect()
         {
             bool success = ensureConnected();
             if (!_long_connection)
@@ -88,7 +81,7 @@ namespace OpenPixelControl.Sharp
             return success;
         }
 
-        public void putPixels(RgbTupleList<byte, byte, byte> pixels, int channel = 0)
+        public void putPixels(PixelStrip pixels, int channel = 0)
         {
             debug("put pixes: connecting");
             bool is_connected = ensureConnected();
@@ -110,9 +103,9 @@ namespace OpenPixelControl.Sharp
 
             foreach (var item in pixels)
             {
-                pieces.Add(item.Item1);
-                pieces.Add(item.Item2);
-                pieces.Add(item.Item3);
+                pieces.Add(item.r);
+                pieces.Add(item.g);
+                pieces.Add(item.b);
             }
 
             byte[] message = new byte[pieces.Count];
@@ -123,6 +116,7 @@ namespace OpenPixelControl.Sharp
             }
 
 
+            _socket.Send(message);
             _socket.Send(message);
 
         }

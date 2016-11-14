@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>OpenPixelControlSharp.Core.Client</id>
-    <version>0.0.1.1</version>
+    <version>0.0.1.2</version>
     <title>Open Pixel Control Client</title>
     <authors>Erin O&apos;Connell</authors>
     <owners>Erin O&apos;Connell</owners>

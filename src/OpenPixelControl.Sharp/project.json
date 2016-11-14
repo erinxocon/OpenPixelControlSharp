@@ -1,8 +1,14 @@
 ﻿{
-  "version": "1.0.0-*",
+  "title": "Open Pixel Control",
+  "copyright": "2016 Erin O'Connell",
+  "description": "Open Pixel Control  Client",
+  "language": "en",
+  "version": "0.0.1-*",
 
   "dependencies": {
-    "NETStandard.Library": "1.6.0"
+    "NETStandard.Library": "1.6.0",
+    "CoreCompat.System.Drawing": "1.0.0-beta002",
+    "System.Collections.Specialized": "4.0.1"
   },
 
   "frameworks": {
