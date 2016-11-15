@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace OpenPixelControl
 {
@@ -16,7 +15,7 @@ namespace OpenPixelControl
             Size = size;
             for (int i = 0; i < Size; i++)
             {
-                AddFirst(200, 0, 200);
+                AddFirst(0, 0, 0);
             }
         }
 
@@ -44,6 +43,33 @@ namespace OpenPixelControl
             }
         }
 
+        public void SetColor(Color color)
+        {
+            var colour = new HSLColor(color);
+            for (int i = 0; i < Size; i++)
+            {
+                AddFirst(colour.ToRgbPixel());
+            }
+        }
+
+        public void SetColor(byte red, byte green, byte blue)
+        {
+            var pixel = new Pixel(red, green, blue);
+            for (int i = 0; i < Size; i++)
+            {
+                AddFirst(pixel);
+            }
+        }
+
+        public void SetColor(int hue, int saturation, int luminosity)
+        {
+            var color = new HSLColor(hue: hue, saturation: saturation, luminosity: luminosity);
+            for (int i = 0; i < Size; i++)
+            {
+                AddFirst(color.ToRgbPixel());
+            }
+
+        }
 
     }
 
