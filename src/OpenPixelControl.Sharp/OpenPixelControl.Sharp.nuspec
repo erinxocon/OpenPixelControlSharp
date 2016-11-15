@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>OpenPixelControlSharp.Core.Client</id>
-    <version>0.0.1.2</version>
+    <version>0.1.2-beta</version>
     <title>Open Pixel Control Client</title>
     <authors>Erin O&apos;Connell</authors>
     <owners>Erin O&apos;Connell</owners>
@@ -12,6 +12,9 @@
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright 2016 Erin O&apos;Connell</copyright>
     <tags>opc led open pixel control</tags>
+    <dependencies>
+      <dependency id="CoreCompat.System.Drawing" version="1.0.0-beta006" />
+    </dependencies>
   </metadata>
   <files>
     <file src="bin\Debug\netstandard1.6\OpenPixelControl.Sharp.dll" target="lib\netstandard1.6" />

@@ -52,7 +52,7 @@ namespace OpenPixelControl
         public Pixel ToRgbPixel()
         {
             Color color = (Color)this;
-            return new Pixel((byte)(color.R-1), (byte)(color.G-1), (byte)(color.B-1));
+            return new Pixel((byte)(color.R), (byte)(color.G), (byte)(color.B));
         }
 
         #region Casts to/from System.Drawing.Color
